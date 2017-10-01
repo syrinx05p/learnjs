@@ -23,6 +23,7 @@ learnjs.applyObject = function (obj, elem) {
 learnjs.showView = function (hash) {
   // map hash and function
   var routes = {
+    '': learnjs.landingView,
     '#problem': learnjs.problemView
   };
 
@@ -32,6 +33,10 @@ learnjs.showView = function (hash) {
   if (viewFn) {
     $('.view-container').empty().append(viewFn(hashParts[1]));
   }
+}
+
+learnjs.landingView = function() {
+  return learnjs.template('landing-view');
 }
 
 learnjs.problemView = function (data) {
@@ -60,7 +65,6 @@ learnjs.problemView = function (data) {
     }
     return false;
   }
-
   view.find('.check-btn').click(checkAnswerClick);
   view.find('.title').text('Problem #' + problemNumber);
   learnjs.applyObject(problemData, view);
