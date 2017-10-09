@@ -3,28 +3,35 @@
 
 <head>
   <meta charset='utf-8'>
+  <meta name="google-signin-client_id" content="482560273592-hlgob8fqjrrqqvlc680qtehvvgajbj1l.apps.googleusercontent.com"/>
   <title>Learn JS!</title>
   <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css'>
+  <link rel='stylesheet' href='/learnjs.css'>
   <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js'></script>
   <script src='/vendor.js'></script>
   <script src='/app.js'></script>
-  <style type="text/css" media="all">
-    body {
-      margin-top: 30px;
-    }
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-    .templates {
-      display: none;
-    }
-  </style>
 </head>
 
 <body>
   <div class='markup'>
+    <div class='nav-container no-select fixed-top u-full-width'>
+      <ul class='inline-list hover-links nav-list six columns'>
+        <li><a class='text-lg' href="#">LearnJS</a></li>
+        <li><a href="#problem-1">Start</a></li>
+      </ul>
+      <div class='four columns signin-bar'>
+        <span class='navbar-padding u-pull-right'>
+        <span class="g-signin2" data-onsuccess="googleSignIn"></span>
+        </span>
+      </div>
+    </div>
     <div class='view-container container'>
-    <!--
+      <!--
       <div class='landing-view'>
         <div class='row'>
           <div class='one-half column'>
@@ -63,6 +70,16 @@
           </div>
         </div>
       </div>
+      <div class='profile-view'>
+        <h3>Your Profile</h3>
+        <div class='email'></div>
+      </div>
+      <div class='profile-link navbar-padding-lg'>
+        <a href="#profile"></a>
+      </div>
+      <li class='skip-btn'>
+        <a>Skip This Problem</a>
+      </li>
     </div>
   </div>
   <script type='text/javascript'>
